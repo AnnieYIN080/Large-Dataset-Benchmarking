@@ -28,16 +28,16 @@ Parquet can be read in pandas, but due to data is too large kernel will break do
 # Analysis
 Number of cities<br>
 1- Pure Python _ csv<br>
-2- Pandas _ csv <br>
-2- Pandas _ parquet <br>
-3.1 - Dask _csv <br>
-3.2 - Dask _ parquet <br>
-3.3 - Pyarrow _parquet <br>
-3.4 - Pyarrow _csv <br>
+2.1 - Pandas _ csv <br>
+2.2 - Pandas _ parquet <br>
+3.1 - Pyarrow _parquet <br>
+3.2 - Pyarrow _csv <br>
 4.1 - Polars_csv <br>
 4.2 - Polars_parquet <br>
-5.1 - DuckDB _csv <br>
-5.2 - DuckDB _parquet <br>
-6.1 Pyspark_csv <br>
-6.2 Pyspark_parquet <br>
+5.1 - Dask _csv <br>
+5.2 - Dask _ parquet <br>
+6.1 - DuckDB _csv <br>
+6.2 - DuckDB _parquet <br>
+7.1 Pyspark_csv <br>
+7.2 Pyspark_parquet <br>
 Future Step<br>
