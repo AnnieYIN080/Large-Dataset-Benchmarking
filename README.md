@@ -64,3 +64,12 @@ Parquet can be read in pandas, but due to data is too large kernel will break do
 ## Solutions
 1. Adding or defining header when created data in generating rather than analysing
 2. Producing parquet file by using pyarrow to input data directly 
+
+
+# repeated test in bash
+        for i in {1..10}
+        do
+          echo "Round $i:" >> log.txt
+          python 1.python(streaming)_csv.py >> log.txt
+          echo "====================" >> log.txt
+        done
