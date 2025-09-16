@@ -16,10 +16,10 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 3.2 - Pyarrow _ parquet <br>
 4.1 - Polars_ csv <br>
 4.2 - Polars_ parquet <br>
-5.1 - Dask _ csv <br>
-5.2 - Dask _ parquet <br>
-6.1 - DuckDB _ csv <br>
-6.2 - DuckDB _ parquet <br>
+5.1 - DuckDB _ csv <br>
+5.2 - DuckDB _ parquet <br>
+6.1 - Dask _ csv <br>
+6.2 - Dask _ parquet <br>
 7.1 - Pyspark _ csv <br>
 7.2 - Pyspark _ parquet <br>
 Future Step<br>
