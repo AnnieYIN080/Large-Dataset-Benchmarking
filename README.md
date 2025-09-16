@@ -12,7 +12,7 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 1- Streaming _ Python _ csv<br>
 2.1 - Chunks _ Pandas _ csv <br>
 2.2 - Chunks _ Pandas _ parquet <br>
-3.1 - Pyarrow _ csv <br>
+3.1 - Pyarrow _ csv (chunk) <br>
 3.2 - Pyarrow _ parquet <br>
 4.1 - Polars_ csv <br>
 4.2 - Polars_ parquet <br>
@@ -23,6 +23,19 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 7.1 - Pyspark _ csv <br>
 7.2 - Pyspark _ parquet <br>
 Future Step<br>
+
+## Background
+### For pure python and parquet file
+Python itself does not have the built-in ability to directly operate Parquet files. That is to say, without installing any third-party libraries, Python cannot directly read, write or stream Parquet files.<br>
+
+### For pyarrow with csv file
+_Parquet does not require explicit chunk control, while CSV must be controlled by chunks._<br>
+
+Parquet file natural Row Groups design:<br>
+The Parquet format is divided into multiple "row groups" within the file, and each group is a relatively independently stored block. When pyarrow.parquet reads, it can directly iterate by these row groups, similar to chunk reading, without the need to manually specify the chunk size; Reading itself has the concept of partitioning, making it easy to handle large files.<br>
+
+CSV is a full line of text without a built-in block structure:<br>
+CSV files are simple line-by-line text without block indexing or compression or encoding mechanisms. When reading CSV files, if the file is large, to avoid memory explosion, it is necessary to implement row-by-row and block-by-block reading by oneself, and manually split into chunks to control memory usage. It is not possible to directly access the specified block as Parquet naturally supports block reading.<br>
 
 ## Challenges when doing analysis
 - Pandas doesn't support index. It cannot print the specific city.
