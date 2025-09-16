@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 # https://github.com/codebeez/one-billion-row-challenge-python/tree/main/data
-# http://www.apache.org/licenses/LICENSE-2.0
-
-# Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/src/create_measurements.py
+# https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/src/create_measurements.py
 
 # JY added a header to the file and changed to csv file format and parquet file format. Need to mention that parquet file format is not supported by pandas due to large data.
 
 # pip install pyarrow
-# /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12 /Users/annie/Downloads/算法学习/onebillionWITHcomparsion/1.1one_billion_rows.py 100
 import sys
 import random
 import time
@@ -104,7 +101,7 @@ def build_test_data_csv(weather_station_names, num_rows_to_create):
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    file_size = os.path.getsize("1.results.csv")
+    file_size = os.path.getsize("results.csv")
     human_file_size = convert_bytes(file_size)
 
     print("CSV written successfully 1.results.csv")
@@ -118,7 +115,7 @@ def build_test_data_parquet(weather_station_names, num_rows_to_create, chunk_siz
     coldest_temp = -12.9
     hottest_temp = 49.9
     num_chunks = (num_rows_to_create + chunk_size - 1) // chunk_size
-    parquet_file = "1.results.parquet"
+    parquet_file = "results.parquet"
     print("Creating the file. this will take a few minutes...")
     schema = pa.schema([
         ("city", pa.string()),
