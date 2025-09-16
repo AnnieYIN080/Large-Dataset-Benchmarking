@@ -44,7 +44,7 @@ def read_and_calculate_stats(file_name):
 
 # Main execution
 start_time = time.time()
-city_stats = read_and_calculate_stats('1.results.csv')
+city_stats = read_and_calculate_stats('results.csv')
 end_time = time.time()
 
 print('Helsinki',city_stats['Helsinki'])
