@@ -27,7 +27,7 @@ def process_data_dask(file_path, chunk_size=1000000):
 
 
 if __name__ == '__main__':
-    file_path = '/Users/annie/Downloads/1.results.csv'
+    file_path = '1.results.csv'
     print("Start Processing")
     city_stats_dask = process_data_dask(file_path)
     print("The processing is completed, and the results are as follows:")
