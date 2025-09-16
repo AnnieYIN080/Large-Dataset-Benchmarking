@@ -23,7 +23,18 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 7.1 - Pyspark _ csv <br>
 7.2 - Pyspark _ parquet <br>
 Future Step<br>
+https://github.com/ibis-project/ibis/tree/main/ibis <br>
 
+Ibis is a unified Python DataFrame API that enables seamless switching of the same piece of code among nearly 20 backends such as DuckDB, Polars, and BigQuery. <br>
+
+* Build an isolated environment (miniconda or mamba);
+
+
+        mamba create -n ibis-dev python=3.11 -y
+        mamba activate ibis-dev
+
+* Install ibis-framework and the required backend extensions;
+* Run the sample or test script.
 ## Background
 ### For pure python and parquet file
 Python itself does not have the built-in ability to directly operate Parquet files. That is to say, without installing any third-party libraries, Python cannot directly read, write or stream Parquet files.<br>
