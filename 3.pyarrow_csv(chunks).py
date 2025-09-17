@@ -10,10 +10,8 @@ def csv_city_stats(filename):
     with csv.open_csv(filename, read_options=csv.ReadOptions(column_names=['city', 'temp']),
                       parse_options=csv.ParseOptions(delimiter=';')) as reader:
         
-        while True:
-            batch = reader.read_next_batch()
-            if batch is None:
-                break
+        for batch iin reader: 
+                          
             table = pa.Table.from_batches([batch])
             cities = table.column('city').to_pylist()
             temps = table.column('temp').to_pylist()
