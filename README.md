@@ -22,6 +22,8 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 6.2 - Dask _ parquet <br>
 7.1 - Pyspark _ csv <br>
 7.2 - Pyspark _ parquet <br>
+tips: 1-5 are run in single instance, 6-7 are recommended to run in EMR (can run locally)<br>
+
 Future Step<br>
 https://github.com/ibis-project/ibis/tree/main/ibis <br>
 
@@ -52,9 +54,13 @@ CSV files are simple line-by-line text without block indexing or compression or 
 - Pandas doesn't support index. It cannot print the specific city.
 - Dask has lots of error msg, but no error msg when put header inside.
 - When read .csv file in DUCKDB, if there's no header, it should be added or defined when reading.
-      FROM read_csv('results.csv', delim=';', columns = {'city': 'VARCHAR', 'temp': 'DOUBLE'})
+
+          FROM read_csv('results.csv', delim=';', columns = {'city': 'VARCHAR', 'temp': 'DOUBLE'})
+  
 - Parquet file cannot be written by command below.
-      with open("results.parquet", "w") as file:
+
+          with open("results.parquet", "w") as file:
+  
 The file is not a parquet format: The file provided might actually be in CSV, TXT or other formats, but the file extension has been changed to.parquet.<br>
 Parquet files have specific file headers and file tails "magic bytes", which DuckDB uses to determine the file format.<br>
 Parquet: write tool generation (such as pandas' to_parquet(), pyarrow, spark, etc.)<br>
