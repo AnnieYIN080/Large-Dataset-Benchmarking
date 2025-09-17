@@ -9,7 +9,7 @@ spark = SparkSession.builder.appName("TimingExample").getOrCreate()
 
 # load parquet file into DataFrame
 parquet_path = "results.parquet"
-df_test = spark.read.parquet(csv_path, header = 'true', inferSchema='true', sep=";")
+df_test = spark.read.parquet(parquet_path)
 df_test.createOrReplaceTempView("pyspark_sql_df")
 
 # Start timing
