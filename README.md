@@ -1,6 +1,5 @@
-# Introduce tools and Potential issue occuring during analysis
-# 1. Generation data file (One Billion Row)
-Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/src/create_measurements.py<br>
+ # Introduce tools and Potential issue occuring during analysis
+# 1. Generation data file ([One Billion Row](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/src/create_measurements.py))
 
 ## Explanation 
 1. The output file doesn't include header. 
@@ -16,18 +15,20 @@ Based on https://github.com/lvgalvao/One-Billion-Row-Challenge-Python/blob/main/
 3.2 - Pyarrow _ parquet <br>
 4.1 - Polars_ csv <br>
 4.2 - Polars_ parquet <br>
+5.0 - DuckDB connection with s3 bucket <br>
 5.1 - DuckDB _ csv <br>
 5.2 - DuckDB _ parquet <br>
 6.1 - Dask _ csv <br>
 6.2 - Dask _ parquet <br>
 7.1 - Pyspark _ csv <br>
 7.2 - Pyspark _ parquet <br>
+
 tips: 1-5 are run in single instance, 6-7 are recommended to run in EMR (can run locally)<br>
 
-Future Step<br>
-https://github.com/ibis-project/ibis/tree/main/ibis <br>
 
-Ibis is a unified Python DataFrame API that enables seamless switching of the same piece of code among nearly 20 backends such as DuckDB, Polars, and BigQuery. <br>
+**Future Step<br>**
+
+[Ibis](https://github.com/ibis-project/ibis/tree/main/ibis) is a unified Python DataFrame API that enables seamless switching of the same piece of code among nearly 20 backends such as DuckDB, Polars, and BigQuery. <br>
 
 * Build an isolated environment (miniconda or mamba);
 
@@ -37,6 +38,8 @@ Ibis is a unified Python DataFrame API that enables seamless switching of the sa
 
 * Install ibis-framework and the required backend extensions;
 * Run the sample or test script.
+
+  
 ## Background
 ### For pure python and parquet file
 Python itself does not have the built-in ability to directly operate Parquet files. That is to say, without installing any third-party libraries, Python cannot directly read, write or stream Parquet files.<br>
@@ -73,9 +76,11 @@ Parquet can be read in pandas, but due to data is too large kernel will break do
 
 
 # repeated test in bash
+```
         for i in {1..10}
         do
           echo "Round $i:" >> log.txt
           python 1.python(streaming)_csv.py >> log.txt
           echo "====================" >> log.txt
         done
+```
